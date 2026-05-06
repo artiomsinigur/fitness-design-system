@@ -1,0 +1,23 @@
+{
+  "name": "@fitness/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "files": [
+    "build"
+  ],
+  "exports": {
+    "./css": "./build/css/tokens.css",
+    "./theme-light": "./build/css/theme-light.css",
+    "./theme-dark": "./build/css/theme-dark.css"
+  },
+  "scripts": {
+    "clean": "rm -rf build",
+    "build:base": "style-dictionary build --config scripts/sd.config.js",
+    "build:themes": "node scripts/sd.themes.js",
+    "build": "yarn build:base && yarn build:themes",
+    "watch": "style-dictionary build --config scripts/sd.config.js --watch"
+  },
+  "devDependencies": {
+    "style-dictionary": "^5.4.0"
+  }
+}

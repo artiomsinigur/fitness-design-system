@@ -1,0 +1,42 @@
+{
+  "color": {
+    "bg": {
+      "canvas":      { "$value": "{color.neutral.0}",   "$type": "color", "$description": "Page background" },
+      "surface":     { "$value": "{color.neutral.50}",  "$type": "color", "$description": "Card/panel surface" },
+      "muted":       { "$value": "{color.neutral.100}", "$type": "color", "$description": "Subtle background" },
+      "inverse":     { "$value": "{color.neutral.900}", "$type": "color", "$description": "Inverse surface for contrast" },
+
+      "brand":       { "$value": "{color.red.500}",     "$type": "color" },
+      "brand-hover": { "$value": "{color.red.600}",     "$type": "color" },
+      "brand-subtle":{ "$value": "{color.red.50}",      "$type": "color" },
+
+      "success":     { "$value": "{color.green.500}",   "$type": "color" },
+      "success-subtle": { "$value": "{color.green.50}", "$type": "color" },
+      "warning":     { "$value": "{color.amber.500}",   "$type": "color" },
+      "warning-subtle": { "$value": "{color.amber.50}", "$type": "color" },
+      "danger":      { "$value": "{color.red.500}",     "$type": "color" },
+      "danger-subtle": { "$value": "{color.red.50}",    "$type": "color" },
+      "info":        { "$value": "{color.blue.500}",    "$type": "color" },
+      "info-subtle": { "$value": "{color.blue.50}",     "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "{color.neutral.900}", "$type": "color" },
+      "secondary": { "$value": "{color.neutral.600}", "$type": "color" },
+      "muted":     { "$value": "{color.neutral.400}", "$type": "color" },
+      "inverse":   { "$value": "{color.neutral.0}",   "$type": "color" },
+      "brand":     { "$value": "{color.red.600}",     "$type": "color" },
+      "success":   { "$value": "{color.green.700}",   "$type": "color" },
+      "warning":   { "$value": "{color.amber.700}",   "$type": "color" },
+      "danger":    { "$value": "{color.red.700}",     "$type": "color" },
+      "link":      { "$value": "{color.blue.600}",    "$type": "color" }
+    },
+    "border": {
+      "default":  { "$value": "{color.neutral.200}", "$type": "color" },
+      "subtle":   { "$value": "{color.neutral.100}", "$type": "color" },
+      "strong":   { "$value": "{color.neutral.400}", "$type": "color" },
+      "brand":    { "$value": "{color.red.500}",     "$type": "color" },
+      "focus":    { "$value": "{color.red.500}",     "$type": "color" },
+      "danger":   { "$value": "{color.red.500}",     "$type": "color" }
+    }
+  }
+}
