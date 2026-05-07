@@ -8,7 +8,8 @@
   "exports": {
     "./css": "./build/css/tokens.css",
     "./theme-light": "./build/css/theme-light.css",
-    "./theme-dark": "./build/css/theme-dark.css"
+    "./theme-dark": "./build/css/theme-dark.css",
+    "./component": "./build/css/component.css"
   },
   "scripts": {
     "clean": "rm -rf build",

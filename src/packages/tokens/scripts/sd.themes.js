@@ -35,7 +35,7 @@ function buildTheme(mode) {
 								mode === 'light'
 									? ':root, [data-theme="light"]'
 									: '[data-theme="dark"]',
-							outputReferences: false,
+							outputReferences: true,
 						},
 					},
 				],

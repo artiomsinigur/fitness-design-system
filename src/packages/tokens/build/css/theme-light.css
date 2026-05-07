@@ -3,34 +3,34 @@
  */
 
 :root, [data-theme="light"] {
-  --color-bg-canvas: #ffffff; /** Page background */
-  --color-bg-surface: #fafafa; /** Card/panel surface */
-  --color-bg-muted: #f4f4f5; /** Subtle background */
-  --color-bg-inverse: #18181b; /** Inverse surface for contrast */
-  --color-bg-brand: #ff3b30;
-  --color-bg-brand-hover: #e5251a;
-  --color-bg-brand-subtle: #fff1f0;
-  --color-bg-success: #10b981;
-  --color-bg-success-subtle: #ecfdf5;
-  --color-bg-warning: #f59e0b;
-  --color-bg-warning-subtle: #fffbeb;
-  --color-bg-danger: #ff3b30;
-  --color-bg-danger-subtle: #fff1f0;
-  --color-bg-info: #3b82f6;
-  --color-bg-info-subtle: #eff6ff;
-  --color-text-primary: #18181b;
-  --color-text-secondary: #52525b;
-  --color-text-muted: #a1a1aa;
-  --color-text-inverse: #ffffff;
-  --color-text-brand: #e5251a;
-  --color-text-success: #047857;
-  --color-text-warning: #b45309;
-  --color-text-danger: #bc1a10;
-  --color-text-link: #2563eb;
-  --color-border-default: #e4e4e7;
-  --color-border-subtle: #f4f4f5;
-  --color-border-strong: #a1a1aa;
-  --color-border-brand: #ff3b30;
-  --color-border-focus: #ff3b30;
-  --color-border-danger: #ff3b30;
+  --color-bg-canvas: var(--color-neutral-0); /** Page background */
+  --color-bg-surface: var(--color-neutral-50); /** Card/panel surface */
+  --color-bg-muted: var(--color-neutral-100); /** Subtle background */
+  --color-bg-inverse: var(--color-neutral-900); /** Inverse surface for contrast */
+  --color-bg-brand: var(--color-red-500);
+  --color-bg-brand-hover: var(--color-red-600);
+  --color-bg-brand-subtle: var(--color-red-50);
+  --color-bg-success: var(--color-green-500);
+  --color-bg-success-subtle: var(--color-green-50);
+  --color-bg-warning: var(--color-amber-500);
+  --color-bg-warning-subtle: var(--color-amber-50);
+  --color-bg-danger: var(--color-red-500);
+  --color-bg-danger-subtle: var(--color-red-50);
+  --color-bg-info: var(--color-blue-500);
+  --color-bg-info-subtle: var(--color-blue-50);
+  --color-text-primary: var(--color-neutral-900);
+  --color-text-secondary: var(--color-neutral-600);
+  --color-text-muted: var(--color-neutral-400);
+  --color-text-inverse: var(--color-neutral-0);
+  --color-text-brand: var(--color-red-600);
+  --color-text-success: var(--color-green-700);
+  --color-text-warning: var(--color-amber-700);
+  --color-text-danger: var(--color-red-700);
+  --color-text-link: var(--color-blue-600);
+  --color-border-default: var(--color-neutral-200);
+  --color-border-subtle: var(--color-neutral-100);
+  --color-border-strong: var(--color-neutral-400);
+  --color-border-brand: var(--color-red-500);
+  --color-border-focus: var(--color-red-500);
+  --color-border-danger: var(--color-red-500);
 }

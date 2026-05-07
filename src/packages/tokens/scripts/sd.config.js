@@ -37,7 +37,11 @@ export default {
 			brokenReferences: 'throw',
 		},
 	},
-	source: ['tokens/primitives.json'],
+	source: [
+        'tokens/primitives.json',
+        'tokens/semantic-light.json',
+        'tokens/component.json',
+    ],
 	platforms: {
 		css: {
 			transforms: [
@@ -53,9 +57,19 @@ export default {
 				{
 					destination: 'build/css/tokens.css',
 					format: 'css/variables',
+                    filter: (token) => token.filePath.includes('primitives'),
 					options: {
 						selector: ':root',
 						outputReferences: false,
+					},
+				},
+				{
+					destination: 'build/css/component.css',
+					format: 'css/variables',
+                    filter: (token) => token.filePath.includes('component'),
+					options: {
+						selector: ':root',
+						outputReferences: true,
 					},
 				},
 			],

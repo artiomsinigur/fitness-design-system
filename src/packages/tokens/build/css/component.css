@@ -1,0 +1,23 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --button-radius: var(--radius-md);
+  --button-font-weight: var(--font-weight-semibold);
+  --card-radius: var(--radius-lg);
+  --card-padding: var(--space-5);
+  --input-radius: var(--radius-md);
+  --button-primary-bg: var(--color-bg-brand);
+  --button-primary-bg-hover: var(--color-bg-brand-hover);
+  --button-primary-text: var(--color-text-inverse);
+  --button-secondary-bg: var(--color-bg-surface);
+  --button-secondary-bg-hover: var(--color-bg-muted);
+  --button-secondary-text: var(--color-text-primary);
+  --button-secondary-border: var(--color-border-default);
+  --card-bg: var(--color-bg-surface);
+  --card-border: var(--color-border-default);
+  --input-bg: var(--color-bg-canvas);
+  --input-border: var(--color-border-default);
+  --input-border-focus: var(--color-border-focus);
+}
