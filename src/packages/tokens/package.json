@@ -7,6 +7,7 @@
   ],
   "exports": {
     "./css": "./build/css/tokens.css",
+    "./semantic-global": "./build/css/semantic-global.css",
     "./theme-light": "./build/css/theme-light.css",
     "./theme-dark": "./build/css/theme-dark.css",
     "./component": "./build/css/component.css"

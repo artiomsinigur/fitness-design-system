@@ -11,19 +11,19 @@
       "text":     { "$value": "{color.text.primary}",   "$type": "color" },
       "border":   { "$value": "{color.border.default}", "$type": "color" }
     },
-    "radius":     { "$value": "{radius.md}",     "$type": "dimension" },
-    "fontWeight": { "$value": "{fontWeight.semibold}", "$type": "fontWeight" }
+    "radius":     { "$value": "{radius.interactive}",        "$type": "dimension" },
+    "fontWeight": { "$value": "{text.label.font-weight}",    "$type": "fontWeight" }
   },
   "card": {
-    "bg":     { "$value": "{color.bg.surface}",     "$type": "color" },
-    "border": { "$value": "{color.border.default}", "$type": "color" },
-    "radius": { "$value": "{radius.lg}",            "$type": "dimension" },
-    "padding":{ "$value": "{space.5}",              "$type": "dimension" }
+    "bg":      { "$value": "{color.bg.surface}",     "$type": "color" },
+    "border":  { "$value": "{color.border.default}", "$type": "color" },
+    "radius":  { "$value": "{radius.container}",     "$type": "dimension" },
+    "padding": { "$value": "{space.inset-lg}",       "$type": "dimension" }
   },
   "input": {
-    "bg":          { "$value": "{color.bg.canvas}",     "$type": "color" },
-    "border":      { "$value": "{color.border.default}","$type": "color" },
-    "borderFocus": { "$value": "{color.border.focus}",  "$type": "color" },
-    "radius":      { "$value": "{radius.md}",           "$type": "dimension" }
+    "bg":          { "$value": "{color.bg.canvas}",      "$type": "color" },
+    "border":      { "$value": "{color.border.default}", "$type": "color" },
+    "borderFocus": { "$value": "{color.border.focus}",   "$type": "color" },
+    "radius":      { "$value": "{radius.interactive}",   "$type": "dimension" }
   }
 }

@@ -94,10 +94,10 @@
   --letter-spacing-wide: 0.05em;
   --letter-spacing-wider: 0.1em;
   --duration-instant: 0;
-  --duration-fast: 120;
-  --duration-base: 200;
-  --duration-slow: 320;
-  --duration-slower: 500;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --duration-slower: 500ms;
   --easing-linear: cubic-bezier(0, 0, 1, 1);
   --easing-standard: cubic-bezier(0.2, 0, 0, 1);
   --easing-emphasized: cubic-bezier(0.3, 0, 0, 1);

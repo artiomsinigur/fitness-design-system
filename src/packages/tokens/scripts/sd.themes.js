@@ -17,7 +17,6 @@ function buildTheme(mode) {
 		source: [
 			'tokens/primitives.json', // referenced, not emitted — needed for resolution
 			`tokens/semantic-${mode}.json`,
-            'tokens/component.json'
 		],
 		platforms: {
 			css: {

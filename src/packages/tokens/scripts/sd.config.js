@@ -29,6 +29,18 @@ StyleDictionary.registerTransform({
 	},
 });
 
+// Adds "ms" to raw number values for duration tokens (e.g. 200 → "200ms").
+// Values that are already 0 stay as "0" (unitless is valid CSS for transition-duration).
+StyleDictionary.registerTransform({
+	name: 'time/ms',
+	type: 'value',
+	filter: (token) => token.$type === 'duration',
+	transform: (token) => {
+		const val = token.$value ?? token.value;
+		return val === 0 ? '0' : `${val}ms`;
+	},
+});
+
 export default {
 	log: {
 		warnings: 'warn',
@@ -39,6 +51,7 @@ export default {
 	},
 	source: [
         'tokens/primitives.json',
+        'tokens/semantic-global.json',
         'tokens/semantic-light.json',
         'tokens/component.json',
     ],
@@ -49,6 +62,7 @@ export default {
 				'name/kebab',
 				'color/css',
 				'size/px',
+				'time/ms',
 				'shadow/css',
 			],
 			prefix: '',
@@ -58,6 +72,15 @@ export default {
 					destination: 'build/css/tokens.css',
 					format: 'css/variables',
                     filter: (token) => token.filePath.includes('primitives'),
+					options: {
+						selector: ':root',
+						outputReferences: false,
+					},
+				},
+				{
+					destination: 'build/css/semantic-global.css',
+					format: 'css/variables',
+                    filter: (token) => token.filePath.includes('semantic-global'),
 					options: {
 						selector: ':root',
 						outputReferences: false,

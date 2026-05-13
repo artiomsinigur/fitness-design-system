@@ -3,11 +3,6 @@
  */
 
 :root {
-  --button-radius: var(--radius-md);
-  --button-font-weight: var(--font-weight-semibold);
-  --card-radius: var(--radius-lg);
-  --card-padding: var(--space-5);
-  --input-radius: var(--radius-md);
   --button-primary-bg: var(--color-bg-brand);
   --button-primary-bg-hover: var(--color-bg-brand-hover);
   --button-primary-text: var(--color-text-inverse);
@@ -15,9 +10,14 @@
   --button-secondary-bg-hover: var(--color-bg-muted);
   --button-secondary-text: var(--color-text-primary);
   --button-secondary-border: var(--color-border-default);
+  --button-radius: var(--radius-interactive);
+  --button-font-weight: var(--text-label-font-weight);
   --card-bg: var(--color-bg-surface);
   --card-border: var(--color-border-default);
+  --card-radius: var(--radius-container);
+  --card-padding: var(--space-inset-lg);
   --input-bg: var(--color-bg-canvas);
   --input-border: var(--color-border-default);
   --input-border-focus: var(--color-border-focus);
+  --input-radius: var(--radius-interactive);
 }

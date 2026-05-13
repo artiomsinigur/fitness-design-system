@@ -26,24 +26,29 @@ Yarn workspaces with a single internal package today:
 
 Tokens live in `src/packages/tokens/tokens/` and follow the W3C DTCG format (`$value`/`$type`):
 
-1. **`primitives.json`** — raw scales (color ramps, space, radius, fontSize, etc.). Never reference these directly from components.
-2. **`semantic-light.json` / `semantic-dark.json`** — role-based aliases (e.g. `surface.bg`, `text.primary`) that point at primitives. These are what UI code should consume.
-3. **`component.json`** — component-level tokens (e.g. button paddings) that reference semantic or primitive tokens.
+1. **`primitives.json`** — raw scales (color ramps, space, radius, fontSize, duration, easing, shadow, etc.). Never reference these directly from components.
+2. **Semantic layer** — role-based aliases that point at primitives. Split into two files by theme-sensitivity:
+   - **`semantic-global.json`** — theme-invariant roles: radius intents (`sharp`/`subtle`/`interactive`/`container`/`overlay`/`prominent`/`pill`), space roles (`inset-*`, `gap-*`, `layout-*`), composite typography styles (`text.body`, `text.heading-md`, `text.display`, etc.), motion (`motion.duration.*`, `motion.easing.*`), and elevation (`elevation.low/medium/high`). These resolve to the same value in every theme and are emitted once under `:root`.
+   - **`semantic-light.json` / `semantic-dark.json`** — color roles only (e.g. `color.bg.surface`, `color.text.primary`, `color.border.default`). These are theme-variant and scoped per theme selector.
+3. **`component.json`** — component-level tokens (e.g. button colors, card radius, input borders) that reference semantic tokens — both global (radius, space, typography) and color roles. Never reference primitives directly here.
 
-Two Style Dictionary configs in `src/packages/tokens/scripts/` produce three CSS files:
+Two Style Dictionary configs in `src/packages/tokens/scripts/` produce five CSS files:
 
-- `sd.config.js` → `build/css/tokens.css` (primitives + component, emitted under `:root`). Registers two custom transforms used by both configs in spirit:
+- `sd.config.js` → three files under `:root`, all resolved to final values (`outputReferences: false` except component). Registers two custom transforms used by both configs:
   - `size/px` — appends `px` to `dimension` tokens (preserves unitless `0`).
   - `shadow/css` — flattens `shadow` token objects (`offsetX/offsetY/blur/spread/color`, possibly arrays) into a CSS `box-shadow` string.
-- `sd.themes.js` → `build/css/theme-light.css` and `build/css/theme-dark.css`. Runs the build twice, filters output to **only** semantic tokens, and scopes them:
+  - `build/css/tokens.css` — primitives only.
+  - `build/css/semantic-global.css` — theme-invariant semantic tokens (radius, space, text styles, motion, elevation).
+  - `build/css/component.css` — component tokens; uses `outputReferences: true` so values emit as `var(--…)` references rather than resolved values.
+- `sd.themes.js` → `build/css/theme-light.css` and `build/css/theme-dark.css`. Runs the build twice, filters output to **only** color semantic tokens, and scopes them:
   - light → `:root, [data-theme="light"]`
   - dark → `[data-theme="dark"]`
 
-Theme switching is therefore done by setting `data-theme="dark"` on a parent element (typically `<html>`); semantic CSS variables resolve to the right primitive automatically.
+Theme switching is done by setting `data-theme="dark"` on a parent element (typically `<html>`); color semantic variables resolve to the right primitive automatically. Non-color semantics (`semantic-global`) are unaffected by theme switching.
 
 `brokenReferences: 'throw'` is set in both configs — a typo in a token alias fails the build rather than silently producing an unresolved `var(--…)`.
 
-The `@fitness/tokens` package exposes only built CSS via `exports`: `./css`, `./theme-light`, `./theme-dark`. New token consumers should import through these subpath exports rather than reaching into `build/` directly.
+The `@fitness/tokens` package exposes only built CSS via `exports`: `./css`, `./semantic-global`, `./theme-light`, `./theme-dark`, `./component`. New token consumers should import through these subpath exports rather than reaching into `build/` directly.
 
 ### App entry
 
